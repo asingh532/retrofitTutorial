@@ -25,6 +25,5 @@ object ApiService{
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         apiProvider = retrofit.create(ApiProvider::class.java)
-
     }
 }

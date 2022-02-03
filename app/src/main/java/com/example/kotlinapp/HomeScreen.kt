@@ -18,7 +18,6 @@ import retrofit2.Response
 class HomeScreen : AppCompatActivity() {
 
     lateinit var bottomNavigation:BottomNavigationView
-    val TAG:String = "HomeScreen"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,28 +37,8 @@ class HomeScreen : AppCompatActivity() {
 
         }
 
-        getAuthorDetails()
     }
 
-    private fun getAuthorDetails() {
-
-        val call = ApiService.apiProvider.getAuthorDetail("2298")
-        call.enqueue(object :Callback<AuthorModel>{
-            override fun onResponse(call: Call<AuthorModel>, response: Response<AuthorModel>) {
-                val result = response.body()
-                if(result != null){
-                    val size = result.books.size
-                    Log.e(TAG, "onResponse: BookList Size =$size")
-                }
-            }
-
-            override fun onFailure(call: Call<AuthorModel>, t: Throwable) {
-                Log.d("HomeScreen", "onFailure: ",t)
-
-            }
-
-        })
-    }
 
     private fun findViews(){
         bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
