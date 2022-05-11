@@ -8,7 +8,7 @@ import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 
-const val BASE_URL = "https://allauthor.com/app/api/"
+const val BASE_URL = "https://apiservice.com/app/api/"
 
 interface ApiProvider {
 
